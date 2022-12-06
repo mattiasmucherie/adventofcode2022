@@ -1,11 +1,9 @@
 use criterion::{criterion_group, criterion_main, Criterion};
 
 fn unique(vec: &[char]) -> bool {
-    for (i, item) in vec.iter().enumerate() {
-        for (i2, item2) in vec.iter().enumerate() {
-            if i != i2 && item == item2 {
-                return false;
-            }
+    for i in 1..vec.len() {
+        if vec[i..].contains(&vec[i - 1]) {
+            return false;
         }
     }
     true
