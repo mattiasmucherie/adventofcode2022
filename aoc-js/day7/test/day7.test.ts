@@ -964,7 +964,7 @@ function day7() {
       }
     }
   }
-  const needToBeFree = fileDirectory.get("/") - (70000000 - 30000000);
+  const needToBeFree = fileDirectory.get("/") ?? 0 - (70000000 - 30000000);
   let bestToDelete = 9999999999;
   let sum = 0;
   fileDirectory.forEach((value) => {
